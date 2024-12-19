@@ -1,0 +1,46 @@
+{
+  "hatsune_miku_place": {
+    "volume": 0.09,
+    "pitch": 2,
+    "subtitles": "sounds.tutorialmod.hatsune_miku_place",
+    "sounds": [
+      "tutorialmod:hatsune_miku_place1",
+      "tutorialmod:hatsune_miku_place2",
+      "tutorialmod:hatsune_miku_place3",
+      "tutorialmod:hatsune_miku_place4"
+
+    ]
+  },
+  "hatsune_miku_break": {
+    "volume": 0.055,
+    "pitch": 1,
+    "subtitles": "sounds.tutorialmod.hatsune_miku_break",
+    "sounds": [
+      "tutorialmod:hatsune_miku_break1",
+      "tutorialmod:hatsune_miku_break2",
+      "tutorialmod:hatsune_miku_break3"
+    ]
+  },
+  "hatsune_miku_fall": {
+    "pitch": 1,
+    "subtitles": "sounds.tutorialmod.hatsune_miku_fall",
+    "sounds": [
+      "tutorialmod:hatsune_miku_fall1"
+    ]
+  },
+  "hatsune_miku_step": {
+    "volume": 40,
+    "subtitles": "sounds.tutorialmod.hatsune_miku_step",
+    "sounds": [
+      "tutorialmod:hatsune_miku_step1"
+    ]
+  },
+  "hatsune_miku_hit": {
+    "subtitles": "sounds.tutorialmod.hatsune_miku_hit",
+    "pitch": 1,
+    "volume": 15,
+    "sounds": [
+      "tutorialmod:hatsune_miku_hit1"
+    ]
+  }
+}

@@ -1,9 +1,13 @@
 package net.furgus.tutorialmod.block;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.furgus.tutorialmod.TutorialMod;
+import net.furgus.tutorialmod.block.custom.HatsuneMikuBlock;
+import net.furgus.tutorialmod.sound.ModSounds;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -21,14 +25,17 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(3f)
                     .requiresTool()));
 
-    public static final Block HATSUNE_MIKU_PLUSHIE = registerBlock("hatsune_miku_plushie",
-            new Block(AbstractBlock.Settings.create().strength(1f)
-                    .requiresTool()));
+    public static final Block HATSUNE_MIKU_BLOCK = registerBlock("hatsune_miku_plushie",
+            new HatsuneMikuBlock(AbstractBlock.Settings.create().strength(0f).requiresTool().sounds(ModSounds.HATSUNE_MIKU_SOUND).noCollision().nonOpaque().noBlockBreakParticles()));
 
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
+    }
+
+    public static void onClientInit() {
+        BlockRenderLayerMap.INSTANCE.putBlock(HATSUNE_MIKU_BLOCK, RenderLayer.getCutout());
     }
 
     private static void registerBlockItem(String name, Block block) {
@@ -42,7 +49,7 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.PINK_GARNET_BLOCK);
             entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
-            entries.add(ModBlocks.HATSUNE_MIKU_PLUSHIE);
+            entries.add(ModBlocks.HATSUNE_MIKU_BLOCK);
         });
     }
 }
