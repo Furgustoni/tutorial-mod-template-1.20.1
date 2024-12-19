@@ -3,33 +3,33 @@
 	"id": "tutorialmod",
 	"version": "${version}",
 	"name": "Tutorial Mod",
-	"description": "I am testing to make a tutorial mod",
+	"description": "Tutorial Mod by Kaupenjoe for YouTube",
 	"authors": [
-		"Me!"
+		"Kaupenjoe!"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://kaupenjoe.net",
+		"sources": "https://github.com/Tutorials-By-Kaupenjoe/Fabric-Tutorial-1.21.X"
 	},
 	"license": "MIT",
 	"icon": "assets/tutorialmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.furgus.tutorialmod.TutorialMod"
+			"net.kaupenjoe.tutorialmod.TutorialMod"
 		],
 		"fabric-datagen": [
-			"net.furgus.tutorialmod.TutorialModDataGenerator"
+			"net.kaupenjoe.tutorialmod.TutorialModDataGenerator"
 		],
 		"client": [
-			"net.furgus.tutorialmod.TutorialModClient"
+			"net.kaupenjoe.tutorialmod.TutorialModClient"
 		]
 	},
 	"mixins": [
 		"tutorialmod.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.9",
+		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*"
