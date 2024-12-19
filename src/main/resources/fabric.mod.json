@@ -16,13 +16,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.kaupenjoe.tutorialmod.TutorialMod"
+			"net.furgus.tutorialmod.TutorialMod"
 		],
 		"fabric-datagen": [
-			"net.kaupenjoe.tutorialmod.TutorialModDataGenerator"
+			"net.furgus.tutorialmod.TutorialModDataGenerator"
 		],
 		"client": [
-			"net.kaupenjoe.tutorialmod.TutorialModClient"
+			"net.furgus.tutorialmod.TutorialModClient"
 		]
 	},
 	"mixins": [
