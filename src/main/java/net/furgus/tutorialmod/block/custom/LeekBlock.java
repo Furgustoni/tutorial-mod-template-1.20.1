@@ -3,13 +3,14 @@ package net.furgus.tutorialmod.block.custom;
 import net.furgus.tutorialmod.block.ModBlocks;
 import net.furgus.tutorialmod.sound.ModSounds;
 import net.furgus.tutorialmod.util.ModTags;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
@@ -22,12 +23,12 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class HatsuneMikuBlock extends Block {
+public class LeekBlock extends Block {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     protected static final VoxelShape SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 13.0, 11.0);
     private long lastSoundTime = 0; // Track when the last sound was played
 
-    public HatsuneMikuBlock(AbstractBlock.Settings settings){
+    public LeekBlock(Settings settings){
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH));
     }
@@ -49,7 +50,7 @@ public class HatsuneMikuBlock extends Block {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof ItemEntity itemEntity) {
             if (isValidItem(itemEntity.getStack())) {
-                itemEntity.setStack(new ItemStack(ModBlocks.HATSUNE_MIKU_BLOCK, itemEntity.getStack().getCount()));
+                    itemEntity.setStack(new ItemStack(ModBlocks.LEEK_BLOCK, itemEntity.getStack().getCount()));
             }
         }
         super.onEntityCollision(state, world, pos, entity);

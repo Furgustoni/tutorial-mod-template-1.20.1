@@ -15,11 +15,12 @@ import net.minecraft.util.Identifier;
 public class ModItemGroups {
     public static final ItemGroup HATSUNE_MIKU_STUFF = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(TutorialMod.MOD_ID, "hatsune_miku_stuff"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.HATSUNE_MIKU))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.HATSUNE_MIKU_BLOCK))
                     .displayName(Text.translatable("itemgroup.tutorialmod.hatsune_miku_stuff"))
             .entries((displayContext, entries) -> {
-                entries.add(ModItems.HATSUNE_MIKU);
                 entries.add(ModBlocks.HATSUNE_MIKU_BLOCK);
+                entries.add(ModItems.LEEK);
+                entries.add(ModItems.MONOGLYPH_SPAWN_EGG);
 
             }).build());
 

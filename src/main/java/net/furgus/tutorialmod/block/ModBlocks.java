@@ -4,9 +4,12 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.furgus.tutorialmod.TutorialMod;
 import net.furgus.tutorialmod.block.custom.HatsuneMikuBlock;
+import net.furgus.tutorialmod.block.custom.LeekCropBlock;
 import net.furgus.tutorialmod.sound.ModSounds;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -26,8 +29,23 @@ public class ModBlocks {
                     .requiresTool()));
 
     public static final Block HATSUNE_MIKU_BLOCK = registerBlock("hatsune_miku_plushie",
-            new HatsuneMikuBlock(AbstractBlock.Settings.create().strength(0f).requiresTool().sounds(ModSounds.HATSUNE_MIKU_SOUND).noCollision().nonOpaque().noBlockBreakParticles()));
+            new HatsuneMikuBlock(AbstractBlock.Settings.create()
+                    .strength(0.06f).requiresTool().sounds(ModSounds.HATSUNE_MIKU_SOUND).noCollision().nonOpaque().noBlockBreakParticles()));
 
+    public static final Block LEEK_BLOCK = registerBlock("leek_block",
+            new HatsuneMikuBlock(AbstractBlock.Settings.create()
+                    .strength(0.06f).requiresTool().sounds(ModSounds.HATSUNE_MIKU_SOUND).noCollision().nonOpaque().noBlockBreakParticles()));
+
+    public static final Block LEEK_CROP = registerBlockWithoutBlockItem("leek_crop",
+            new LeekCropBlock(AbstractBlock.Settings.create()
+                    .breakInstantly()
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY).mapColor(MapColor.DARK_GREEN).noCollision().nonOpaque().noBlockBreakParticles()));
+
+    private static Block registerBlockWithoutBlockItem(String name, Block block) {
+        registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
+    }
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
