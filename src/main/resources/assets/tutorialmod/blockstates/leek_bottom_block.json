@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "tutorialmod:block/leek_bottom_block",
+
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "tutorialmod:block/leek_bottom_block"
+
+    },
+    "axis=z": {
+      "model": "tutorialmod:block/leek_bottom_block",
+
+      "x": 90
+    }
+  }
+}

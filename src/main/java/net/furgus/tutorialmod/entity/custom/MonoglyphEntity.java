@@ -36,7 +36,7 @@ public class MonoglyphEntity extends AnimalEntity implements GeoEntity {
     protected void initGoals(){
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(2,new MeleeAttackGoal(this,1.20,false));
-        this.goalSelector.add(4, new WanderAroundFarGoal(this,0.05));
+        this.goalSelector.add(0, new WanderAroundFarGoal(this, 1.0));
         this.goalSelector.add(0, new LookAtEntityGoal(this, PlayerEntity.class, 1));
 
         this.targetSelector.add(0,new ActiveTargetGoal<>(this,PlayerEntity.class,true));
@@ -46,15 +46,15 @@ public class MonoglyphEntity extends AnimalEntity implements GeoEntity {
     public static DefaultAttributeContainer.Builder setAttributes(){
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20)
-                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 10)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1.4)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 0.03);
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23F)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0)
+                .add(EntityAttributes.GENERIC_ARMOR, 2.0);
     }
 
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 40;
+            this.idleAnimationTimeout = 20;
             this.idleAnimationState.start(this.age);
         } else {
             --this.idleAnimationTimeout;
@@ -87,11 +87,14 @@ public class MonoglyphEntity extends AnimalEntity implements GeoEntity {
     }
 
     private PlayState predicate(software.bernie.geckolib.animation.AnimationState<MonoglyphEntity> monoglyphEntityAnimationState) {
-        if(monoglyphEntityAnimationState.isMoving()){
+        // Check if the entity is moving
+        if (monoglyphEntityAnimationState.isMoving()) {
+            // If moving, set the walk animation
             monoglyphEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.monoglyph.walk", Animation.LoopType.LOOP));
+        } else {
+            // If not moving, set the idle animation
+            monoglyphEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.monoglyph.idle", Animation.LoopType.LOOP));
         }
-
-        monoglyphEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.monoglyph.idle", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

@@ -6,10 +6,18 @@
   "item.tutorialmod.monoglyph_spawn_egg": "Monoglyph Spawn Egg",
 
   "block.tutorialmod.pink_garnet_block": "Block of Pink Garnet",
+  "block.tutorialmod.leek_bottom_block": "Leek Bottom Block",
+  "block.tutorialmod.leek_middle_bottom_block": "Leek Middle Bottom Block",
+  "block.tutorialmod.leek_middle_top_block": "Leek Middle Top Block",
+  "block.tutorialmod.leek_top_block": "Leek Top Block",
+  "block.tutorialmod.leek_tip_top_block": "Leek Tip Top Block",
+  "block.tutorialmod.leek_top_upper_block": "Leek Top Upper Block",
+  "block.tutorialmod.leek_leaves": "Leek Leaves",
   "block.tutorialmod.leek_crop": "Leek Crop",
   "block.tutorialmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
   "block.tutorialmod.hatsune_miku_plushie": "Hatsune Miku Plushie",
 
+  "itemgroup.tutorialmod.hatsune_miku_building_blocks": "Hatsune Miku Building Blocks",
   "itemgroup.tutorialmod.hatsune_miku_stuff": "Hatsune Miku Random stuff",
 
   "entity.tutorialmod.monoglyph": "Monoglyph"

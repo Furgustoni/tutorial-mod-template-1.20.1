@@ -1,7 +1,6 @@
 package net.furgus.tutorialmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.furgus.tutorialmod.block.ModBlocks;
 import net.furgus.tutorialmod.block.custom.LeekCropBlock;
@@ -9,7 +8,6 @@ import net.furgus.tutorialmod.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Model;
-import net.minecraft.data.client.Models;
 import net.minecraft.util.Identifier;
 
 import java.util.Optional;
@@ -23,11 +21,9 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator){
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_GARNET_BLOCK);
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEEK_BLOCK);
-
-
         blockStateModelGenerator.registerCrop(ModBlocks.LEEK_CROP, LeekCropBlock.AGE, 0,1,2,3,4,5,6);
     }
+
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator){

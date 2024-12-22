@@ -30,9 +30,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate(){
-        addDrop(ModBlocks.HATSUNE_MIKU_BLOCK);
         addDrop(ModBlocks.PINK_GARNET_BLOCK);
-        addDrop(ModBlocks.LEEK_BLOCK);
+        addDrop(ModBlocks.HATSUNE_MIKU_PLUSHIE);
+        addDrop(ModBlocks.LEEK_MIDDLE_BOTTOM_BLOCK);
+        addDrop(ModBlocks.LEEK_MIDDLE_TOP_BLOCK);
+        addDrop(ModBlocks.LEEK_BOTTOM_BLOCK);
+        addDrop(ModBlocks.LEEK_TOP_BLOCK);
+        addDrop(ModBlocks.LEEK_TIP_TOP_BLOCK);
+        addDrop(ModBlocks.LEEK_TOP_UPPER_BLOCK);
 
         BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.LEEK_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(LeekCropBlock.AGE, LeekCropBlock.MAX_AGE));
@@ -43,6 +48,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+
         return this.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop, ((LeafEntry.Builder<?>)
                 ItemEntry.builder(item).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(minDrops, maxDrops))))
                 .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
