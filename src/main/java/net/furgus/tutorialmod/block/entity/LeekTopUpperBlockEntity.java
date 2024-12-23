@@ -13,6 +13,7 @@ import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.util.RenderUtil;
 
 public class LeekTopUpperBlockEntity extends BlockEntity implements GeoBlockEntity {
+    protected static final RawAnimation DEPLOY_ANIM = RawAnimation.begin().thenPlay("animation.leek_top_upper_block.deploy").thenLoop("animation.leek_top_upper_block.idle");
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public LeekTopUpperBlockEntity(BlockPos pos, BlockState state) {
@@ -25,7 +26,7 @@ public class LeekTopUpperBlockEntity extends BlockEntity implements GeoBlockEnti
     }
 
     private PlayState predicate(AnimationState<LeekTopUpperBlockEntity> animationState) {
-        animationState.getController().setAnimation(RawAnimation.begin().then("idle",Animation.LoopType.LOOP));
+        animationState.getController().setAnimation(RawAnimation.begin().thenPlay("animation.leek_top_upper_block.deploy").thenLoop("animation.leek_top_upper_block.idle"));
         return PlayState.CONTINUE;
     }
 

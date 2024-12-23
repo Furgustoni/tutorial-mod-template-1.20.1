@@ -1,5 +1,6 @@
 package net.furgus.tutorialmod.item.custom;
 
+import net.furgus.tutorialmod.block.entity.LeekTopUpperBlockEntity;
 import net.furgus.tutorialmod.item.client.LeekTopUpperBlockItemRenderer;
 import net.furgus.tutorialmod.item.client.RendererProvider;
 import net.minecraft.block.Block;
@@ -37,12 +38,11 @@ public class LeekTopUpperBlockItem extends BlockItem implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        // Corrected to use the correct type for the animation state
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
     private PlayState predicate(AnimationState<LeekTopUpperBlockItem> animationState) {
-        animationState.getController().setAnimation(RawAnimation.begin().thenLoop("idle"));
+        animationState.getController().setAnimation(RawAnimation.begin().then("idle",Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

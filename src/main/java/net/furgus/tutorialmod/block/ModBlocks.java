@@ -30,29 +30,30 @@ public class ModBlocks {
 
     public static final Block LEEK_BOTTOM_BLOCK = registerBlock("leek_bottom_block",
             new PillarBlock(AbstractBlock.Settings.create()
-                    .strength(0.02f).sounds(BlockSoundGroup.SHROOMLIGHT)));
+                    .strength(1.5f).sounds(BlockSoundGroup.SHROOMLIGHT)));
     public static final Block LEEK_MIDDLE_BOTTOM_BLOCK = registerBlock("leek_middle_bottom_block",
             new PillarBlock(AbstractBlock.Settings.create()
-                    .strength(0.02f).sounds(BlockSoundGroup.SHROOMLIGHT)));
+                    .strength(1.5f).sounds(BlockSoundGroup.SHROOMLIGHT)));
     public static final Block LEEK_MIDDLE_TOP_BLOCK = registerBlock("leek_middle_top_block",
             new PillarBlock(AbstractBlock.Settings.create()
-                    .strength(0.02f).sounds(BlockSoundGroup.SHROOMLIGHT)));
+                    .strength(1.5f).sounds(BlockSoundGroup.SHROOMLIGHT)));
     public static final Block LEEK_TOP_BLOCK = registerBlock("leek_top_block",
             new PillarBlock(AbstractBlock.Settings.create()
-                    .strength(0.02f).sounds(BlockSoundGroup.SHROOMLIGHT)));
+                    .strength(1.5f).sounds(BlockSoundGroup.SHROOMLIGHT)));
     public static final Block LEEK_TIP_TOP_BLOCK = registerBlock("leek_tip_top_block",
             new PillarBlock(AbstractBlock.Settings.create()
-                    .strength(0.02f).sounds(BlockSoundGroup.SHROOMLIGHT)));
+                    .strength(1.5f).sounds(BlockSoundGroup.SHROOMLIGHT)));
     public static final Block LEEK_TOP_UPPER_BLOCK = Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, "leek_top_upper_block"),
             new LeekTopUpperBlock(AbstractBlock.Settings.create()
-                    .strength(0.02f)
+                    .strength(1.5f)
                     .nonOpaque()
+                    .pistonBehavior(PistonBehavior.PUSH_ONLY)
                     .sounds(BlockSoundGroup.SHROOMLIGHT)));
 
 
     public static final Block HATSUNE_MIKU_PLUSHIE = registerBlock("hatsune_miku_plushie",
             new HatsuneMikuPlushie(AbstractBlock.Settings.create()
-                    .strength(0.02f).breakInstantly().sounds(ModSounds.HATSUNE_MIKU_SOUND).noCollision().nonOpaque().noBlockBreakParticles()));
+                    .strength(0.02f).breakInstantly().sounds(ModSounds.HATSUNE_MIKU_SOUND).noCollision().nonOpaque()));
 
 
     public static final Block LEEK_CROP = registerBlockWithoutBlockItem("leek_crop",

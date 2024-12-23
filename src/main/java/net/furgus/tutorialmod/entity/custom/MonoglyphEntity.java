@@ -93,7 +93,7 @@ public class MonoglyphEntity extends AnimalEntity implements GeoEntity {
             monoglyphEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.monoglyph.walk", Animation.LoopType.LOOP));
         } else {
             // If not moving, set the idle animation
-            monoglyphEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.monoglyph.idle", Animation.LoopType.LOOP));
+            monoglyphEntityAnimationState.getController().setAnimation(RawAnimation.begin().thenPlay("animation.monoglyph.deploy").thenLoop("animation.monoglyph.idle"));
         }
         return PlayState.CONTINUE;
     }
