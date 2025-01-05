@@ -1,39 +1,35 @@
 {
 	"schemaVersion": 1,
-	"id": "tutorialmod",
+	"id": "furgusmenagerie",
 	"version": "${version}",
-	"name": "Tutorial Mod",
-	"description": "Tutorial Mod by Kaupenjoe for YouTube",
+	"name": "Furgus Menagerie",
+	"description": "Furgus Menagerie",
 	"authors": [
 		"Kaupenjoe!",
 		"Furguston"
 	],
-	"contact": {
-		"homepage": "https://kaupenjoe.net",
-		"sources": "https://github.com/Tutorials-By-Kaupenjoe/Fabric-Tutorial-1.21.X"
-	},
 	"license": "MIT",
-	"icon": "assets/tutorialmod/icon.png",
+	"icon": "assets/furgusmenagerie/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.furgus.tutorialmod.TutorialMod"
+			"net.furgus.furgusmenagerie.FurgusMod"
 		],
 		"fabric-datagen": [
-			"net.furgus.tutorialmod.TutorialModDataGenerator"
+			"net.furgus.furgusmenagerie.FurgusModDataGenerator"
 		],
 		"client": [
-			"net.furgus.tutorialmod.TutorialModClient"
+			"net.furgus.furgusmenagerie.FurgusModClient"
 		]
 	},
 	"mixins": [
-		"tutorialmod.mixins.json"
+      "furgusmenagerie.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21",
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
 		"java": ">=21",
-		"geckolib": ">=4.5.8",
+		"geckolib": ">=4.4.7",
 		"fabric-api": "*"
 	},
 	"suggests": {

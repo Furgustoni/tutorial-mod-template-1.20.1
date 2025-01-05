@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "furgusmenagerie:block/leek_middle_bottom_block",
+
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "furgusmenagerie:block/leek_middle_bottom_block"
+
+    },
+    "axis=z": {
+      "model": "furgusmenagerie:block/leek_middle_bottom_block",
+
+      "x": 90
+    }
+  }
+}

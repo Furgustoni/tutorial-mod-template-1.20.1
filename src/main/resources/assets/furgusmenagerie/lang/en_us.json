@@ -1,0 +1,40 @@
+{
+  "item.furgusmenagerie.leek": "Leek",
+  "item.furgusmenagerie.sculk_hoverboard_item": "Hoverbug",
+
+  "item.furgusmenagerie.monoglyph_spawn_egg": "Monoglyph Spawn Egg",
+  "item.furgusmenagerie.heiroglith_spawn_egg": "Heiroglith Spawn Egg",
+
+  "item.furgusmenagerie.hatsune_miku_music_disc_1": "Hatsune Miku Disc 1",
+  "item.furgusmenagerie.hatsune_miku_music_disc_1.desc": "Giga - Beyond the way ft.Miku・Rin・Len",
+
+  "item.furgusmenagerie.hatsune_miku_music_disc_2": "Hatsune Miku Disc 2",
+  "item.furgusmenagerie.hatsune_miku_music_disc_2.desc": "Otomania - levan Polkka ft.Miku",
+
+  "block.furgusmenagerie.heiroglith_head": "Heiroglith Head",
+
+  "block.furgusmenagerie.leek_bottom_block": "Leek Bottom Block",
+  "block.furgusmenagerie.leek_middle_bottom_block": "Leek Middle Bottom Block",
+  "block.furgusmenagerie.leek_middle_top_block": "Leek Middle Top Block",
+  "block.furgusmenagerie.leek_top_block": "Leek Top Block",
+  "block.furgusmenagerie.leek_tip_top_block": "Leek Tip Top Block",
+  "block.furgusmenagerie.leek_top_upper_block": "Leek Top Upper Block",
+  "block.furgusmenagerie.leek_leaves": "Leek Leaves",
+  "block.furgusmenagerie.leek_crop": "Leek Crop",
+  "block.furgusmenagerie.leek_sapling": "Leek Sapling",
+
+
+  "block.furgusmenagerie.hatsune_miku_plushie": "Hatsune Miku Plushie",
+
+  "itemgroup.furgusmenagerie.hatsune_miku_building_blocks": "Hatsune Miku Building Blocks",
+  "itemgroup.furgusmenagerie.hatsune_miku_stuff": "Hatsune Miku Random stuff",
+
+  "entity.furgusmenagerie.monoglyph": "Monoglyph",
+  "entity.furgusmenagerie.heiroglith": "Heiroglith",
+  "entity.furgusmenagerie.sculk_hoverboard": "Hoverbug",
+
+  "subtitle.furgusmenagerie.monoglyph_ambient": "Monoglyph grunt",
+  "subtitle.furgusmenagerie.monoglyph_step": "Monoglyph thud",
+  "subtitle.furgusmenagerie.monoglyph_hurt": "Monoglyph hurt",
+  "subtitle.furgusmenagerie.monoglyph_death": "Monoglyph dies"
+}

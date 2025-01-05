@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "half=lower,facing=north,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_lower", "y": 180 },
+    "half=upper,facing=north,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_upper", "y": 180 },
+    "half=lower,facing=south,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_lower" },
+    "half=upper,facing=south,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_upper" },
+    "half=lower,facing=east,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_lower", "y": 270 },
+    "half=upper,facing=east,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_upper", "y": 270 },
+    "half=lower,facing=west,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_lower", "y": 90 },
+    "half=upper,facing=west,wrong_item_used=false": { "model": "furgusmenagerie:block/heiroglith_head_upper", "y": 90 },
+
+    "half=lower,facing=north,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_lower_wrong", "y": 180 },
+    "half=upper,facing=north,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_upper_wrong", "y": 180 },
+    "half=lower,facing=south,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_lower_wrong" },
+    "half=upper,facing=south,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_upper_wrong" },
+    "half=lower,facing=east,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_lower_wrong", "y": 270 },
+    "half=upper,facing=east,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_upper_wrong", "y": 270 },
+    "half=lower,facing=west,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_lower_wrong", "y": 90 },
+    "half=upper,facing=west,wrong_item_used=true": { "model": "furgusmenagerie:block/heiroglith_head_upper_wrong", "y": 90 }
+  }
+}

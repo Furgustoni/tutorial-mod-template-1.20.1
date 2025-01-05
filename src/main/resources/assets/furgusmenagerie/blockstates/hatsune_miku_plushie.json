@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "furgusmenagerie:block/hatsune_miku_plushie" },
+    "facing=east": { "model": "furgusmenagerie:block/hatsune_miku_plushie", "y": 90 },
+    "facing=south": { "model": "furgusmenagerie:block/hatsune_miku_plushie", "y": 180 },
+    "facing=west": { "model": "furgusmenagerie:block/hatsune_miku_plushie", "y": 270 }
+  }
+}

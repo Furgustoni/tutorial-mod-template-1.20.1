@@ -1,0 +1,155 @@
+{
+  "hatsune_miku_place": {
+    "volume": 0.09,
+    "pitch": 2,
+    "subtitles": "sounds.furgusmenagerie.hatsune_miku_place",
+    "sounds": [
+      "furgusmenagerie:hatsune_miku_place1",
+      "furgusmenagerie:hatsune_miku_place2",
+      "furgusmenagerie:hatsune_miku_place3",
+      "furgusmenagerie:hatsune_miku_place4"
+
+    ]
+  },
+  "hatsune_miku_break": {
+    "volume": 0.055,
+    "pitch": 1,
+    "subtitles": "sounds.furgusmenagerie.hatsune_miku_break",
+    "sounds": [
+      "furgusmenagerie:hatsune_miku_break1",
+      "furgusmenagerie:hatsune_miku_break2",
+      "furgusmenagerie:hatsune_miku_break3"
+    ]
+  },
+  "hatsune_miku_fall": {
+    "pitch": 1,
+    "subtitles": "sounds.furgusmenagerie.hatsune_miku_fall",
+    "sounds": [
+      "furgusmenagerie:hatsune_miku_fall1"
+    ]
+  },
+  "hatsune_miku_step": {
+    "volume": 40,
+    "subtitles": "sounds.furgusmenagerie.hatsune_miku_step",
+    "sounds": [
+      "furgusmenagerie:hatsune_miku_step1"
+    ]
+  },
+  "hatsune_miku_hit": {
+    "subtitles": "sounds.furgusmenagerie.hatsune_miku_hit",
+    "pitch": 1,
+    "volume": 15,
+    "sounds": [
+      "furgusmenagerie:hatsune_miku_hit1"
+    ]
+  },
+  "hatsune_miku_disc_1": {
+    "sounds": [
+      {
+        "name" : "furgusmenagerie:hatsune_miku_music_disc_1",
+        "stream" : true
+      }
+    ]
+  },
+  "hatsune_miku_disc_2": {
+    "sounds": [
+      {
+        "name": "furgusmenagerie:hatsune_miku_music_disc_2",
+        "stream": true
+      }
+    ]
+  },
+  "monoglyph_ambient": {
+    "volume": 0.09,
+    "pitch": 2,
+    "subtitles": "subtitle.furgusmenagerie.monoglyph_ambient",
+    "sounds": [
+      "furgusmenagerie:monoglyph_ambient1",
+      "furgusmenagerie:monoglyph_ambient2",
+      "furgusmenagerie:monoglyph_ambient3"
+
+    ]
+  },
+  "monoglyph_hurt": {
+    "volume": 0.09,
+    "pitch": 2,
+    "subtitles": "subtitle.furgusmenagerie.monoglyph_hurt",
+    "sounds": [
+      "furgusmenagerie:monoglyph_hurt1",
+      "furgusmenagerie:monoglyph_hurt2"
+
+    ]
+  },
+  "monoglyph_step": {
+    "volume": 0.09,
+    "pitch": 2,
+    "subtitles": "subtitle.furgusmenagerie.monoglyph_step",
+    "sounds": [
+      "furgusmenagerie:monoglyph_step1",
+      "furgusmenagerie:monoglyph_step2",
+      "furgusmenagerie:monoglyph_step3"
+
+    ]
+  },
+  "monoglyph_death": {
+    "volume": 0.09,
+    "pitch": 2,
+    "subtitles": "subtitle.furgusmenagerie.monoglyph_death",
+    "sounds": [
+      "furgusmenagerie:monoglyph_death1",
+      "furgusmenagerie:monoglyph_death2"
+
+    ]
+  },
+  "hatsune_miku_music_disc_1": {
+    "sounds": [
+      {
+      "name":"furgusmenagerie:hatsune_miku_music_1",
+      "stream":true
+    }
+    ]
+  },
+  "hatsune_miku_music_disc_2": {
+    "sounds": [
+      {
+        "name":"furgusmenagerie:hatsune_miku_music_2",
+        "stream":true
+      }
+    ]
+  },
+  "hatsune_miku_music_1": {
+    "sounds": [
+      {
+        "name":"furgusmenagerie:hatsune_miku_music_1",
+        "stream":true
+      }
+    ]
+  },
+  "hatsune_miku_music_2": {
+    "sounds": [
+      {
+        "name":"furgusmenagerie:hatsune_miku_music_2",
+        "stream":true
+      }
+    ]
+  },
+  "sculk_hoverboard_hovering": {
+      "volume": 0.09,
+      "pitch": 1,
+      "subtitles": "subtitle.furgusmenagerie.sculk_hoverboard_hovering",
+      "sounds": [
+        "furgusmenagerie:sculk_hoverboard_hovering1",
+        "furgusmenagerie:sculk_hoverboard_hovering2"
+      ]
+  },
+  "sculk_hoverboard_ambient": {
+    "volume": 0.09,
+    "pitch": 0,
+    "subtitles": "subtitle.furgusmenagerie.sculk_hoverboard_ambient",
+    "sounds": [
+      "furgusmenagerie:sculk_hoverboard_ambient1",
+      "furgusmenagerie:sculk_hoverboard_ambient2",
+      "furgusmenagerie:sculk_hoverboard_ambient3"
+    ]
+  }
+}
