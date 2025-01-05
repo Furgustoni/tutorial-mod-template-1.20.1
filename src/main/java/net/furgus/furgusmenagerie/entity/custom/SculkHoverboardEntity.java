@@ -54,7 +54,7 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
     private int echoShardCount = 0;
     private final int echoShardThreshold = 5 + this.random.nextInt(4);
 
-    private boolean isDrifting = false;// Keep only drag factor
+    private boolean isDrifting = false;
     private Vec3d previousVelocity = Vec3d.ZERO;
     private float momentumDrag = 0.85F;
     private float baseDrag = 0.95F;
@@ -67,7 +67,7 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     protected void initGoals(){
-        this.goalSelector.add(0, new FlyGoal(this, 1)); // Increased speed
+        this.goalSelector.add(0, new FlyGoal(this, 1));
         this.goalSelector.add(3, new TemptGoal(this, 1.1, Ingredient.ofItems(new ItemConvertible[]{Items.ECHO_SHARD}), false));
     }
 
@@ -81,7 +81,6 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     protected void fall(double heightDifference, boolean onGround, BlockState state, BlockPos landedPosition) {
-        // No fall damage
     }
 
     private ItemStack createHoverboardItem() {
@@ -96,15 +95,13 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
     public boolean damage(DamageSource source, float amount) {
         if (!this.getWorld().isClient && source.getAttacker() instanceof PlayerEntity) {
             hitCount++;
-            hurtTimer = 10; // Set hurt animation duration
+            hurtTimer = 10;
             this.scheduleVelocityUpdate();
             this.emitGameEvent(GameEvent.ENTITY_DAMAGE, source.getAttacker());
-            this.playSound(SoundEvents.BLOCK_SCULK_SENSOR_CLICKING_STOP, 1.0F, 1.0F); // Play sound
+            this.playSound(SoundEvents.BLOCK_SCULK_SENSOR_CLICKING_STOP, 1.0F, 1.0F);
 
             if (hitCount >= 2) {
-                // Use the new method to create the item with preserved data
                 this.dropStack(createHoverboardItem());
-                // Kill the entity
                 this.discard();
                 return true;
             }
@@ -121,7 +118,6 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
             hurtTimer--;
         }
 
-        // Base hover particles
         if (this.getWorld().isClient) {
             for (int i = 0; i < 3; i++) {
                 double offsetX = this.random.nextGaussian() * 0.1;
@@ -131,24 +127,22 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
                         this.getX() + offsetX,
                         this.getY(),
                         this.getZ() + offsetZ,
-                        0, -0.01, 0 // Increase fade speed
+                        0, -0.01, 0
                 );
             }
         }
 
-        // Play hover sound when moving with random delay and pitch
         if (!this.getWorld().isClient && this.isMoving()) {
             if (hoverSoundTimer <= 0) {
-                float pitch = 0.8F + this.random.nextFloat() * 0.4F; // Random pitch between 0.8 and 1.2
+                float pitch = 0.8F + this.random.nextFloat() * 0.4F;
                 this.playSound(ModSounds.SCULK_HOVERBOARD_HOVERING, 1.0F, pitch);
                 hoverSoundTimer = hoverSoundDelay;
-                hoverSoundDelay = 20 + this.random.nextInt(40); // Reset delay
+                hoverSoundDelay = 20 + this.random.nextInt(40);
             } else {
                 hoverSoundTimer--;
             }
         }
     }
-
 
     private boolean isMoving() {
         Vec3d velocity = this.getVelocity();
@@ -171,24 +165,19 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
         LivingEntity passenger = this.getControllingPassenger();
 
         if (passenger != null) {
-            // Check vertical movement first
             if (velocity.y > 0.1) {
                 animationState.getController().transitionLength(15)
                         .setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
             } else if (velocity.y < -0.1) {
                 animationState.getController().transitionLength(15)
                         .setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
-            }
-            // Check horizontal movement
-            else if (passenger.forwardSpeed > 0.1) {
+            } else if (passenger.forwardSpeed > 0.1) {
                 animationState.getController().transitionLength(15)
                         .setAnimation(RawAnimation.begin().then("forward", Animation.LoopType.LOOP));
             } else if (passenger.forwardSpeed < -0.1) {
                 animationState.getController().transitionLength(15)
                         .setAnimation(RawAnimation.begin().then("backward", Animation.LoopType.LOOP));
-            }
-            // Check strafing
-            else if (passenger.sidewaysSpeed > 0.1) {
+            } else if (passenger.sidewaysSpeed > 0.1) {
                 animationState.getController().transitionLength(15)
                         .setAnimation(RawAnimation.begin().then("strafe_right", Animation.LoopType.LOOP));
             } else if (passenger.sidewaysSpeed < -0.1) {
@@ -221,7 +210,6 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
         hitCount = 0;
         ItemStack itemStack = player.getStackInHand(hand);
 
-        // Add name tag handling
         if (itemStack.isOf(Items.NAME_TAG)) {
             ItemStack itemStack2 = itemStack.copy();
             itemStack2.setCount(1);
@@ -236,42 +224,36 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
         }
 
         if (!player.getWorld().isClient) {
-            // Check if the player is holding an echo shard
             if (itemStack.isOf(Items.ECHO_SHARD)) {
                 echoShardCount++;
-                itemStack.decrement(1); // Consume one echo shard
-                this.playSound(SoundEvents.ENTITY_GENERIC_EAT, 1.0F, 1.0F); // Play eating sound
+                itemStack.decrement(1);
+                this.playSound(SoundEvents.ENTITY_GENERIC_EAT, 1.0F, 1.0F);
 
-                // Spawn particle effects on the server side
                 ((ServerWorld) this.getWorld()).spawnParticles(
                         ModParticles.SCULK_TRACE_PARTICLE,
                         this.getX(), this.getY() + 0.5, this.getZ(),
-                        20, // Number of particles
-                        0.5, 0.5, 0.5, // Offset for X, Y, Z
-                        0.1// Speed
+                        20,
+                        0.5, 0.5, 0.5,
+                        0.1
                 );
 
                 if (echoShardCount >= echoShardThreshold) {
-                    // Drop the reward item
                     this.dropItem(ModItems.LEEK);
-                    echoShardCount = 0; // Reset the count
+                    echoShardCount = 0;
 
-                    // Spawn particle effects on the server side
                     ((ServerWorld) this.getWorld()).spawnParticles(
                             ParticleTypes.SCULK_CHARGE_POP,
                             this.getX(), this.getY() + 0.5, this.getZ(),
-                            20, // Number of particles
-                            0.5, 0.5, 0.5, // Offset for X, Y, Z
-                            1// Speed
+                            20,
+                            0.5, 0.5, 0.5,
+                            1
                     );
                 }
                 return ActionResult.SUCCESS;
             }
 
-            // Check if the player is holding the Sculk Hoverboard item
             if (itemStack.isOf(ModItems.SCULK_HOVERBOARD_ITEM)) {
                 System.out.println("Player is holding the Sculk Hoverboard item.");
-                // Toggle maintain Y level
                 maintainYLevel = !maintainYLevel;
                 if (maintainYLevel) {
                     maintainedYLevel = this.getY();
@@ -279,21 +261,18 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
                 return ActionResult.SUCCESS;
             }
 
-            // Modified sneaking interaction
             if (player.isSneaking()) {
                 System.out.println("Player is sneaking and right-clicked the entity.");
-                // Create item with preserved data
+
                 ItemStack hoverboardItem = createHoverboardItem();
                 if (!player.getInventory().insertStack(hoverboardItem)) {
                     player.dropItem(hoverboardItem, false);
                 }
-                // Remove the entity
                 this.discard();
                 return ActionResult.SUCCESS;
             }
         }
 
-        // If the player is not holding an echo shard, allow them to ride the entity
         if (!this.hasPassengers() && !itemStack.isOf(Items.ECHO_SHARD)) {
             player.startRiding(this);
             return ActionResult.SUCCESS;
@@ -311,8 +290,6 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
     protected SoundEvent getAmbientSound() {
         return ModSounds.SCULK_HOVERBOARD_AMBIENT;
     }
-
-
 
     @Override
     public void travel(Vec3d pos) {
@@ -332,53 +309,45 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
 
             if (passenger instanceof PlayerEntity player) {
                 if (KeyInputHandler.hoverUpKey.isPressed()) {
-                    y = 0.5; // Move up when hover up key is pressed
+                    y = 0.5;
                 } else if (KeyInputHandler.hoverDownKey.isPressed()) {
-                    y = -0.5; // Move down when hover down key is pressed
+                    y = -0.5;
                 }
 
-                // Check for drifting
                 isDrifting = player.isSneaking();
             }
 
-            // Apply drifting effect
             if (isDrifting) {
-                strafe *= 2.0F; // Increase strafe speed when drifting
+                strafe *= 2.0F;
             }
 
             Vec3d movement = calculateMovementVector(forward, strafe, y, this.getYaw());
 
             boolean isMovingNow = forward != 0 || strafe != 0 || y != 0;
 
-            // Apply slippery momentum only when transitioning from moving to stopping
             if (!isMovingNow && wasMoving) {
-                // Initial momentum from previous movement
                 previousVelocity = this.getVelocity();
             } else if (!isMovingNow) {
-                // Continue sliding with decay
                 movement = previousVelocity.multiply(momentumDrag);
                 previousVelocity = movement;
 
-                // Stop completely if movement is very small
                 if (movement.lengthSquared() < 0.001) {
                     previousVelocity = Vec3d.ZERO;
                     movement = Vec3d.ZERO;
                 }
             } else {
-                // Normal movement
                 previousVelocity = Vec3d.ZERO;
             }
 
             wasMoving = isMovingNow;
 
             if (maintainYLevel) {
-                movement = new Vec3d(movement.x, 0, movement.z); // Maintain current Y level
+                movement = new Vec3d(movement.x, 0, movement.z);
                 this.setPos(this.getX(), maintainedYLevel, this.getZ());
             }
             this.setVelocity(movement);
             this.move(MovementType.SELF, this.getVelocity());
 
-            // Apply base drag only when actively moving
             if (forward != 0 || strafe != 0 || y != 0) {
                 this.setVelocity(this.getVelocity().multiply(baseDrag));
             }
@@ -401,7 +370,6 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
         double rad = Math.toRadians(yaw);
         double sin = Math.sin(rad);
         double cos = Math.cos(rad);
-        // Fix inverted controls by correcting signs
         double dx = (strafe * cos - forward * sin) * 0.5;
         double dz = (forward * cos + strafe * sin) * 0.5;
         return new Vec3d(dx, y, dz);
@@ -480,17 +448,17 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
 
     @Override
     public double getMountedHeightOffset() {
-        return 0.4D; // Adjust this value as needed to make the player stand
+        return 0.4D;
     }
 
     @Override
     public boolean hasNoGravity() {
-        return true; // Disable gravity for this entity
+        return true;
     }
 
     @Override
     public boolean isInsideWall() {
-        return false; // Prevent suffocation damage
+        return false;
     }
 
     public void moveUp() {
