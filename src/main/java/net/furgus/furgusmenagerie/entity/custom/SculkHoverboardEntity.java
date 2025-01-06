@@ -291,70 +291,70 @@ public class SculkHoverboardEntity extends AnimalEntity implements GeoEntity {
         return ModSounds.SCULK_HOVERBOARD_AMBIENT;
     }
 
-    @Override
-    public void travel(Vec3d pos) {
-        if (this.isAlive() && this.hasPassengers()) {
-            LivingEntity passenger = this.getControllingPassenger();
-            this.prevYaw = this.getYaw();
-            this.prevPitch = this.getPitch();
-            this.setYaw(MathHelper.wrapDegrees(passenger.getYaw()));
-            this.setPitch(MathHelper.clamp(passenger.getPitch() * 0.5F, -90.0F, 90.0F));
-            this.setRotation(this.getYaw(), this.getPitch());
-            this.bodyYaw = this.getYaw();
-            this.headYaw = this.bodyYaw;
+  @Override
+public void travel(Vec3d pos) {
+    if (this.isAlive() && this.hasPassengers()) {
+        LivingEntity passenger = this.getControllingPassenger();
+        this.prevYaw = this.getYaw();
+        this.prevPitch = this.getPitch();
+        this.setYaw(MathHelper.wrapDegrees(passenger.getYaw()));
+        this.setPitch(MathHelper.clamp(passenger.getPitch() * 0.5F, -90.0F, 90.0F));
+        this.setRotation(this.getYaw(), this.getPitch());
+        this.bodyYaw = this.getYaw();
+        this.headYaw = this.bodyYaw;
 
-            float forward = passenger.forwardSpeed;
-            float strafe = passenger.sidewaysSpeed;
-            double y = 0.0;
+        float forward = passenger.forwardSpeed;
+        float strafe = passenger.sidewaysSpeed;
+        double y = 0.0;
 
-            if (passenger instanceof PlayerEntity player) {
-                if (KeyInputHandler.hoverUpKey.isPressed()) {
-                    y = 0.5;
-                } else if (KeyInputHandler.hoverDownKey.isPressed()) {
-                    y = -0.5;
-                }
-
-                isDrifting = player.isSneaking();
+        if (passenger instanceof PlayerEntity player) {
+            if (KeyInputHandler.hoverUpKey.isPressed()) {
+                y = 0.5;
+            } else if (KeyInputHandler.hoverDownKey.isPressed()) {
+                y = -0.5;
             }
 
-            if (isDrifting) {
-                strafe *= 2.0F;
-            }
+            isDrifting = player.isSneaking();
+        }
 
-            Vec3d movement = calculateMovementVector(forward, strafe, y, this.getYaw());
+        if (isDrifting) {
+            strafe *= 2.0F;
+        }
 
-            boolean isMovingNow = forward != 0 || strafe != 0 || y != 0;
+        Vec3d movement = calculateMovementVector(forward, strafe, y, this.getYaw());
 
-            if (!isMovingNow && wasMoving) {
-                previousVelocity = this.getVelocity();
-            } else if (!isMovingNow) {
-                movement = previousVelocity.multiply(momentumDrag);
-                previousVelocity = movement;
+        boolean isMovingNow = forward != 0 || strafe != 0 || y != 0;
 
-                if (movement.lengthSquared() < 0.001) {
-                    previousVelocity = Vec3d.ZERO;
-                    movement = Vec3d.ZERO;
-                }
-            } else {
+        if (!isMovingNow && wasMoving) {
+            previousVelocity = this.getVelocity();
+        } else if (!isMovingNow) {
+            movement = previousVelocity.multiply(momentumDrag);
+            previousVelocity = movement;
+
+            if (movement.lengthSquared() < 0.001) {
                 previousVelocity = Vec3d.ZERO;
-            }
-
-            wasMoving = isMovingNow;
-
-            if (maintainYLevel) {
-                movement = new Vec3d(movement.x, 0, movement.z);
-                this.setPos(this.getX(), maintainedYLevel, this.getZ());
-            }
-            this.setVelocity(movement);
-            this.move(MovementType.SELF, this.getVelocity());
-
-            if (forward != 0 || strafe != 0 || y != 0) {
-                this.setVelocity(this.getVelocity().multiply(baseDrag));
+                movement = Vec3d.ZERO;
             }
         } else {
-            super.travel(pos);
+            previousVelocity = Vec3d.ZERO;
         }
+
+        wasMoving = isMovingNow;
+
+        if (maintainYLevel) {
+            movement = new Vec3d(movement.x, 0, movement.z);
+            this.setPos(this.getX(), maintainedYLevel, this.getZ());
+        }
+        this.setVelocity(movement);
+        this.move(MovementType.SELF, this.getVelocity());
+
+        if (forward != 0 || strafe != 0 || y != 0) {
+            this.setVelocity(this.getVelocity().multiply(baseDrag));
+        }
+    } else {
+        super.travel(pos);
     }
+}
 
     @Override
     protected void updatePassengerPosition(Entity passenger, Entity.PositionUpdater positionUpdater) {
