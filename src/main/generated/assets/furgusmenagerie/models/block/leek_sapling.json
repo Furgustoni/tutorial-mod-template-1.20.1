@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "furgusmenagerie:block/leek_sapling"
+  }
+}

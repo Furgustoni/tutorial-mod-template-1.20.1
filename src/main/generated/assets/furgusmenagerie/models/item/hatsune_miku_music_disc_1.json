@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "furgusmenagerie:item/hatsune_miku_music_disc_1"
+  }
+}

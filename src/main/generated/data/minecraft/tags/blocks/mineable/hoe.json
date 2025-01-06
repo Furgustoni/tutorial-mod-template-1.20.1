@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "furgusmenagerie:leek_crop",
+    "furgusmenagerie:leek_bottom_block",
+    "furgusmenagerie:leek_middle_bottom_block",
+    "furgusmenagerie:leek_middle_top_block",
+    "furgusmenagerie:leek_top_block",
+    "furgusmenagerie:leek_tip_top_block",
+    "furgusmenagerie:leek_top_upper_block",
+    "furgusmenagerie:leek_sapling"
+  ]
+}

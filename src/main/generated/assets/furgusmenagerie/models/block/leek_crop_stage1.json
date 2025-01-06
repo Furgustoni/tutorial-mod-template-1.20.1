@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "furgusmenagerie:block/leek_crop_stage1"
+  }
+}

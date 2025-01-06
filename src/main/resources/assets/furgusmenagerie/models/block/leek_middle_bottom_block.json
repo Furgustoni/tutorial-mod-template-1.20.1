@@ -1,0 +1,25 @@
+{
+	"credit": "made by Furguston",
+	"parent": "minecraft:block/block",
+
+	"textures": {
+		"6": "furgusmenagerie:block/leek_bottom_top",
+		"9": "furgusmenagerie:block/leek_middle_bottom_side",
+		"10": "furgusmenagerie:block/leek_middle_top",
+		"particle": "furgusmenagerie:block/leek_middle_bottom_side"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#9"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#9"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#9"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#9"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#10"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#6"}
+			}
+		}
+	]
+}

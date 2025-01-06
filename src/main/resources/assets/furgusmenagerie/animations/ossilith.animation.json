@@ -1,0 +1,87 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ossilith.test": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [14.41749, -27.38476, -11.00271],
+						"easing": "linear"
+					}
+				},
+				"right_shoulder": {
+					"rotation": {
+						"vector": [-18.94521, 44.13692, -26.23967],
+						"easing": "linear"
+					}
+				},
+				"right_arm_1": {
+					"rotation": {
+						"vector": [0, -27.75, 0],
+						"easing": "linear"
+					}
+				},
+				"right_arm_3": {
+					"rotation": {
+						"vector": [0, 0, -69],
+						"easing": "linear"
+					}
+				},
+				"finger_4": {
+					"rotation": {
+						"vector": [0, 0, 31.75],
+						"easing": "linear"
+					}
+				},
+				"finger_5": {
+					"rotation": {
+						"vector": [0, 0, 52],
+						"easing": "linear"
+					}
+				},
+				"finger_6": {
+					"rotation": {
+						"vector": [0, 0, -81.5],
+						"easing": "linear"
+					}
+				},
+				"torso": {
+					"rotation": {
+						"vector": [4.5, 0, 0],
+						"easing": "linear"
+					}
+				},
+				"left_arm_1": {
+					"rotation": {
+						"vector": [0, 27.75, 0],
+						"easing": "linear"
+					}
+				},
+				"left_arm_3": {
+					"rotation": {
+						"vector": [0, 0, -32.5],
+						"easing": "linear"
+					}
+				},
+				"upper_torso": {
+					"rotation": {
+						"vector": [-14.75, 0, 0],
+						"easing": "linear"
+					}
+				},
+				"cam": {
+					"rotation": {
+						"vector": [166.93117, 37.29006, -176.76155],
+						"easing": "linear"
+					},
+					"position": {
+						"vector": [88.09715, 0.10113, -116.80922],
+						"easing": "linear"
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

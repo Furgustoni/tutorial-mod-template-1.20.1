@@ -1,0 +1,21 @@
+  {
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "tag": "furgusmenagerie:hatsune_music_disc"
+    },
+    "S": {
+      "item": "minecraft:cyan_wool"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SRS",
+    "SSS"
+  ],
+  "result": {
+    "item": "furgusmenagerie:hatsune_miku_plushie"
+  },
+  "show_notification": true
+}

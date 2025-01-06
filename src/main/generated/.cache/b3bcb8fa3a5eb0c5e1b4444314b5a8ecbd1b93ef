@@ -1,0 +1,5 @@
+// 1.20.1	2025-01-05T04:45:01.3865614	Furgus Menagerie/Tags for minecraft:block
+51ff9717177326980fbcaf8b084e31917f6c7ab7 data\minecraft\tags\blocks\mineable\pickaxe.json
+9061dd2d493b9adff838f1c185dba4d637380983 data\minecraft\tags\blocks\prevent_mob_spawning_inside.json
+a7e3ef0fdf3e3c3cd3d6a4b0fa4de8155c892bf1 data\minecraft\tags\blocks\needs_iron_tool.json
+c4a6092a12e0cac12b5c462edcc07f8fa939806b data\minecraft\tags\blocks\mineable\hoe.json

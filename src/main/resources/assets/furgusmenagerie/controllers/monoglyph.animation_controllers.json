@@ -1,0 +1,28 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller": {
+			"initial_state": "deploy",
+			"states": {
+				"deploy": {
+					"animations": ["deploy"],
+					"transitions": [
+						{"idle": "q.ground_speed < 0.5"}
+					],
+					"blend_transition": 1.25
+				},
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"walk": ""}
+					]
+				},
+				"walk": {
+					"transitions": [
+						{"idle": ""}
+					]
+				}
+			}
+		}
+	}
+}

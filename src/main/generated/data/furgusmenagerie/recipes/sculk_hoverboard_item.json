@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:sculk_shrieker"
+    },
+    "B": {
+      "item": "minecraft:bone_block"
+    },
+    "C": {
+      "item": "minecraft:amethyst_block"
+    },
+    "S": {
+      "item": "minecraft:sculk"
+    }
+  },
+  "pattern": [
+    "SBS",
+    "SAS",
+    "BCB"
+  ],
+  "result": {
+    "item": "furgusmenagerie:sculk_hoverboard_item"
+  },
+  "show_notification": true
+}
